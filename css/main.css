@@ -1,0 +1,11 @@
+canvas {
+    border: 1px solid blue;
+}
+
+.flex {
+    display: flex;
+}
+
+.container {
+    flex-direction: row;
+}
