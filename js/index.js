@@ -79,16 +79,13 @@ function drawRectangle(clicks) {
 }
 
 function drawCircle(clicks) {
-    console.log('drawCircle');
+    // console.log('drawCircle');
     gCtx.beginPath();
-    gCtx.moveTo(clicks[0].x, clicks[0].y);
-    gCtx.arc(clicks[0].x, clicks[0].y, 50, 0, 2 * Math.PI);
-    // gCtx.arc(100, 300, 50, 0, 2 * Math.PI);
-    // gCtx.arcTo(clicks[0].x, clicks[0].y, clicks[1].x, clicks[1].y, 100);
+    var radius = getDistance(clicks);
+    gCtx.arc(clicks[0].x, clicks[0].y, radius, 0, 2 * Math.PI);
     gCtx.strokeStyle = gColor;
     gCtx.closePath();
     gCtx.stroke();
-    // gCtx.fill();
 }
 
 function drawTriangle(clicks) {
@@ -121,4 +118,12 @@ function onAbout() {
 
 function emptyArry(array) {
     array.splice(0, array.length);
+}
+
+function getDistance(clicks) {
+    var a = clicks[0].x - clicks[1].x;
+    var b = clicks[0].y - clicks[1].y;
+    // var a = x1 - x2;
+    // var b = y1 - y2;
+    return Math.sqrt(a * a + b * b);
 }

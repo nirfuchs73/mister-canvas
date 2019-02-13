@@ -10,33 +10,37 @@
 </head>
 
 <body onload="init()">
-    <div class="container flex">
-        <div>
-            <!-- <label for="color" class="label">Select color:</label> -->
-            <input type="color" id="color" name="color" form="frmRegister" onchange="colorChanged()" />
+    <div class="main-container flex">
+        <div class="menu flex">
+            <div>
+                <!-- <label for="color" class="label">Select color:</label> -->
+                <input type="color" id="color" name="color" form="frmRegister" onchange="colorChanged()" />
+            </div>
+            <div>
+                <select class="shape">
+                    <option value="line">Line</option>
+                    <option value="rectangle">Rectangle</option>
+                    <option value="circle">Circle</option>
+                    <option value="triangle">Triangle</option>
+                </select>
+            </div>
+            <div class="save">
+                <button onclick="onSave()">Save</button>
+            </div>
+            <div class="clear">
+                <button onclick="onClear()">Clear</button>
+            </div>
+            <div class="about">
+                <button onclick="onAbout()">About</button>
+            </div>
         </div>
-        <div>
-            <select class="shape">
-                <option value="line">Line</option>
-                <option value="rectangle">Rectangle</option>
-                <option value="circle">Circle</option>
-                <option value="triangle">Triangle</option>
-            </select>
-        </div>
-        <div class="save">
-            <button onclick="onSave()">Save</button>
-        </div>
-        <div class="clear">
-            <button onclick="onClear()">Clear</button>
-        </div>
-        <div class="about">
-            <button onclick="onAbout()">About</button>
+        <div class="canvas">
+            <canvas id="my-canvas" width="800" height="500" onmousedown="onCanvasMouseDown(event)">
+                Update your browser to enjoy canvas!
+            </canvas>
         </div>
     </div>
 
-    <canvas id="my-canvas" width="500" height="400" onmousedown="onCanvasMouseDown(event)">
-        Update your browser to enjoy canvas!
-    </canvas>
 
     <script src="js/index.js"></script>
 </body>
